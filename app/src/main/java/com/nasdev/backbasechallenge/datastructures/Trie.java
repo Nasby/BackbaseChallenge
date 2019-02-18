@@ -19,7 +19,7 @@ public class Trie {
             HashMap<Character, TrieNode> child = current.getChildren();
             char ch = word.charAt(level);
 
-            if( child.containsKey(ch)){
+            if (child.containsKey(ch)){
                 current = child.get(ch);
             }else{
                 TrieNode temp = new TrieNode(ch);
@@ -32,6 +32,7 @@ public class Trie {
     }
 
     //Finds the node that matches the prefix
+    //Runs in O(m)
     public TrieNode find(String word){
         TrieNode current = root;
         for (int i = 0; i < word.length(); i++){

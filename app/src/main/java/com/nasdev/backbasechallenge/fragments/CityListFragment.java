@@ -56,6 +56,7 @@ public class CityListFragment extends Fragment {
         originalList = new String[cities.size()];
 
         //Populate both our Trie for searching and our recycler view
+        //Runs in O(n) but only needs to run once at startup
         for (int i = 0; i < cities.size(); i++){
             originalList[i] = cities.get(i).toString();
             trie.insert(cities.get(i).toString());
